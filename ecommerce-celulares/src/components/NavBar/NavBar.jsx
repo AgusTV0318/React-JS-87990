@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
@@ -5,25 +6,51 @@ const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-brand">
-          <h1>📱 CellTECH</h1>
-        </div>
+        <Link to="/" className="navbar-brand">
+          <h1>📱 CelularShop</h1>
+        </Link>
 
         <ul className="navbar-menu">
           <li>
-            <a href="#inicio">Inicio</a>
+            <NavLink
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              end
+            >
+              Inicio
+            </NavLink>
           </li>
           <li>
-            <a href="#productos">Productos</a>
+            <NavLink
+              to="/category/apple"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Apple
+            </NavLink>
           </li>
           <li>
-            <a href="#marcas">Marcas</a>
+            <NavLink
+              to="/category/samsung"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Samsung
+            </NavLink>
           </li>
           <li>
-            <a href="#ofertas">Ofertas</a>
+            <NavLink
+              to="/category/google"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Google
+            </NavLink>
           </li>
           <li>
-            <a href="#contacto">Contacto</a>
+            <NavLink
+              to="/category/xiaomi"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Xiaomi
+            </NavLink>
           </li>
         </ul>
 
