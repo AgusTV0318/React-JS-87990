@@ -205,7 +205,7 @@ export const getProducts = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(products);
-    }, 1500); // Simula delay de 1.5 segundos
+    }, 1500);
   });
 };
 

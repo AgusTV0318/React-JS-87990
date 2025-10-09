@@ -1,26 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantityAdded, setQuantityAdded] = useState(1);
+  const { addItem } = useCart();
 
-  const handleDecrease = () => {
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    }
-  };
-
-  const handleIncrease = () => {
-    if (quantity < product.stock) {
-      setQuantity(quantity + 1);
-    }
-  };
-
-  const handleAddToCart = () => {
-    console.log(
-      `Agregado al carrito: ${quantity} unidad(es) de ${product.name}`
-    );
+  const handleOnAdd = (quantity) => {
+    setQuantityAdded(quantity);
+    addItem(product, quantity);
   };
 
   return (
@@ -78,31 +68,26 @@ const ItemDetail = ({ product }) => {
           </ul>
         </div>
 
-        {product.stock > 0 && (
-          <div className="item-detail-actions">
-            <div className="quantity-selector">
-              <button
-                className="quantity-btn"
-                onClick={handleDecrease}
-                disabled={quantity === 1}
-              >
-                -
-              </button>
-              <span className="quantity-display">{quantity}</span>
-              <button
-                className="quantity-btn"
-                onClick={handleIncrease}
-                disabled={quantity === product.stock}
-              >
-                +
-              </button>
+        <div className="item-detail-actions">
+          {quantityAdded > 0 ? (
+            <div className="added-to-cart">
+              <p className="success-message">
+                ✓ Agregado al carrito ({quantityAdded} unidad
+                {quantityAdded > 1 ? "es" : ""})
+              </p>
+              <div className="cart-actions">
+                <Link to="/cart" className="go-to-cart-btn">
+                  Ir al carrito
+                </Link>
+                <Link to="/" className="continue-shopping-btn">
+                  Seguir comprando
+                </Link>
+              </div>
             </div>
-
-            <button className="add-to-cart-btn" onClick={handleAddToCart}>
-              Agregar al carrito
-            </button>
-          </div>
-        )}
+          ) : (
+            <ItemCount stock={product.stock} initial={1} onAdd={handleOnAdd} />
+          )}
+        </div>
 
         <Link to="/" className="back-link">
           ← Volver al catálogo

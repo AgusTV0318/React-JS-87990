@@ -1,11 +1,16 @@
+import { Link } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 import "./CartWidget.css";
 
 const CartWidget = () => {
+  const { getTotalQuantity } = useCart();
+  const totalQuantity = getTotalQuantity();
+
   return (
-    <div className="cart-widget">
+    <Link to="/cart" className="cart-widget">
       <div className="cart-icon">🛒</div>
-      <span className="cart-count">3</span>
-    </div>
+      {totalQuantity > 0 && <span className="cart-count">{totalQuantity}</span>}
+    </Link>
   );
 };
 
