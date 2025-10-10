@@ -9,7 +9,7 @@ export const products = [
     description:
       "El iPhone 15 Pro Max cuenta con titanio de calidad aeroespacial, pantalla Super Retina XDR de 6.7 pulgadas, chip A17 Pro y sistema de cámaras avanzado.",
     image:
-      "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=500&h=500&fit=crop",
+      "https://tse1.mm.bing.net/th/id/OIP.s1Vr0cb1dhI2PtGKZWhjSQAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.7" Super Retina XDR',
       processor: "A17 Pro",
@@ -29,7 +29,7 @@ export const products = [
     description:
       "iPhone 14 con pantalla Super Retina XDR de 6.1 pulgadas, chip A15 Bionic y sistema de cámara dual avanzado.",
     image:
-      "https://images.unsplash.com/photo-1678652078473-82f0e2df1e16?w=500&h=500&fit=crop",
+      "https://tse2.mm.bing.net/th/id/OIP.7vQ7IPjvaEFNvQD817AiiAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.1" Super Retina XDR',
       processor: "A15 Bionic",
@@ -49,7 +49,7 @@ export const products = [
     description:
       "Samsung Galaxy S24 Ultra con pantalla Dynamic AMOLED 2X de 6.8 pulgadas, procesador Snapdragon 8 Gen 3 y S Pen integrado.",
     image:
-      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=500&h=500&fit=crop",
+      "https://tse3.mm.bing.net/th/id/OIP.ETaTuJYOZ5mI4LgIikBJ7wAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.8" Dynamic AMOLED 2X',
       processor: "Snapdragon 8 Gen 3",
@@ -69,7 +69,7 @@ export const products = [
     description:
       "Galaxy S23 con pantalla Dynamic AMOLED 2X de 6.1 pulgadas y procesador Snapdragon 8 Gen 2.",
     image:
-      "https://images.unsplash.com/photo-1686244270741-e24a3e574e7d?w=500&h=500&fit=crop",
+      "https://tse1.mm.bing.net/th/id/OIP.9KXm4bDI0rbDgrtC_3VUFAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.1" Dynamic AMOLED 2X',
       processor: "Snapdragon 8 Gen 2",
@@ -89,7 +89,7 @@ export const products = [
     description:
       "Pixel 8 Pro con Google Tensor G3, pantalla LTPO OLED de 6.7 pulgadas y las mejores capacidades de IA en fotografía.",
     image:
-      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=500&h=500&fit=crop",
+      "https://tse1.mm.bing.net/th/id/OIP.nhhXgjMU4nUeMGHsJZ1aeAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.7" LTPO OLED',
       processor: "Google Tensor G3",
@@ -109,7 +109,7 @@ export const products = [
     description:
       "Pixel 7a ofrece experiencia premium a precio accesible con Google Tensor G2 y excelente cámara.",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&h=500&fit=crop",
+      "https://tse4.mm.bing.net/th/id/OIP.TLuCFjJ73N2mcuKnLtYTMgAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.1" OLED',
       processor: "Google Tensor G2",
@@ -129,7 +129,7 @@ export const products = [
     description:
       "Xiaomi 13 Pro con cámaras Leica, Snapdragon 8 Gen 2 y pantalla AMOLED de 6.73 pulgadas.",
     image:
-      "https://images.unsplash.com/photo-1592286927505-b0c2dc503f49?w=500&h=500&fit=crop",
+      "https://tse1.mm.bing.net/th/id/OIP.jlHVF5pGz_VcIfjspuZf6gAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.73" AMOLED',
       processor: "Snapdragon 8 Gen 2",
@@ -149,7 +149,7 @@ export const products = [
     description:
       "Redmi Note 13 Pro con excelente relación calidad-precio, pantalla AMOLED de 120Hz y batería de larga duración.",
     image:
-      "https://images.unsplash.com/photo-1567581935884-3349723552ca?w=500&h=500&fit=crop",
+      "https://tse1.mm.bing.net/th/id/OIP.4L-26bzi7_ktAoZvdJc7JwAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.67" AMOLED',
       processor: "Snapdragon 7s Gen 2",
@@ -169,7 +169,7 @@ export const products = [
     description:
       "OnePlus 12 con pantalla ProXDR de 6.82 pulgadas, Snapdragon 8 Gen 3 y carga rápida de 100W.",
     image:
-      "https://images.unsplash.com/photo-1580910051074-3eb694886505?w=500&h=500&fit=crop",
+      "https://tse4.mm.bing.net/th/id/OIP.DUQ_LXLecrS5rD-qo-lzgAAAAA?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.82" ProXDR',
       processor: "Snapdragon 8 Gen 3",
@@ -189,7 +189,7 @@ export const products = [
     description:
       "Motorola Edge 40 Pro con pantalla OLED curva de 6.67 pulgadas, Snapdragon 8 Gen 2 y experiencia Android pura.",
     image:
-      "https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=500&h=500&fit=crop",
+      "https://th.bing.com/th/id/OIP.WYVm1l7bgQq3PxM5rTxEjwAAAA?o=7&cb=12rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
     specs: {
       screen: '6.67" pOLED',
       processor: "Snapdragon 8 Gen 2",
