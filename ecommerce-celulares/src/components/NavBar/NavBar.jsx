@@ -41,7 +41,7 @@ const NavBar = () => {
               to="/category/google"
               className={({ isActive }) => (isActive ? "active" : "")}
             >
-              Google
+              Pixel
             </NavLink>
           </li>
           <li>
@@ -50,6 +50,15 @@ const NavBar = () => {
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Xiaomi
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/category/oneplus"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              OnePlus
             </NavLink>
           </li>
         </ul>
