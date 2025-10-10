@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../CartContext/CartContext";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ product }) => {
   const [quantityAdded, setQuantityAdded] = useState(1);
-  const { addItem } = useCart();
+  const { addItem, getItemQuantity } = useCart();
 
   const handleOnAdd = (quantity) => {
     setQuantityAdded(quantity);
     addItem(product, quantity);
   };
+
+  const itemsInCart = getItemQuantity(product.id);
 
   return (
     <div className="item-detail">
@@ -74,6 +76,8 @@ const ItemDetail = ({ product }) => {
               <p className="success-message">
                 ✓ Agregado al carrito ({quantityAdded} unidad
                 {quantityAdded > 1 ? "es" : ""})
+                {itemsInCart > quantityAdded &&
+                  ` - Total en carrito: ${itemsInCart}`}
               </p>
               <div className="cart-actions">
                 <Link to="/cart" className="go-to-cart-btn">
@@ -85,7 +89,19 @@ const ItemDetail = ({ product }) => {
               </div>
             </div>
           ) : (
-            <ItemCount stock={product.stock} initial={1} onAdd={handleOnAdd} />
+            <>
+              {itemsInCart > 0 && (
+                <p className="already-in-cart">
+                  Ya tienes {itemsInCart} unidad{itemsInCart > 1 ? "es" : ""} en
+                  el carrito
+                </p>
+              )}
+              <ItemCount
+                stock={product.stock}
+                initial={1}
+                onAdd={handleOnAdd}
+              />
+            </>
           )}
         </div>
 
