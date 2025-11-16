@@ -7,6 +7,7 @@ import {
   where,
   addDoc,
   serverTimestamp,
+  writeBatch,
 } from "firebase/firestore";
 import { db } from "./config";
 
@@ -95,6 +96,32 @@ export const createOrder = async (orderData) => {
     return docRef.id;
   } catch (error) {
     console.error("❌ Error al crear orden:", error);
+    throw error;
+  }
+};
+
+export const updateStock = async (items) => {
+  try {
+    const batch = writeBatch(db);
+
+    for (const item of items) {
+      const productRef = doc(db, "products", item.id);
+      const productSnap = await getDoc(productRef);
+
+      if (productSnap.exists()) {
+        const currentStock = productSnap.data().stock;
+        const newStock = currentStock - item.quantity;
+
+        console.log(`  📉 ${item.name}: ${currentStock} → ${newStock}`);
+
+        batch.update(productRef, { stock: newStock });
+      }
+    }
+
+    await batch.commit();
+    console.log("✅ Stock actualizado exitosamente");
+  } catch (error) {
+    console.error("❌ Error al actualizar stock:", error);
     throw error;
   }
 };

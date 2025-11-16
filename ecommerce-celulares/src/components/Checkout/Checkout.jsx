@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext/CartContext";
-import { createOrder } from "../../firebase/services";
+import { createOrder, updateStock } from "../../firebase/services";
 import "./Checkout.css";
 
 const Checkout = () => {
@@ -60,8 +60,6 @@ const Checkout = () => {
     setError("");
 
     try {
-      console.log("🛒 Creando orden de compra...");
-
       const orderData = {
         buyer: {
           name: buyer.name.trim(),
@@ -81,7 +79,7 @@ const Checkout = () => {
 
       const id = await createOrder(orderData);
 
-      console.log("✅ Orden creada exitosamente con ID:", id);
+      await updateStock(cart);
 
       setOrderId(id);
       clear();
