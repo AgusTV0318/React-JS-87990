@@ -74,7 +74,7 @@ http://localhost:5173
 
 ## 🌐 Deploy
 
-El proyecto está desplegado en Vercel: https://react-js-87990-git-main-agustin-vozzas-projects.vercel.app/
+El proyecto está desplegado en Vercel: react-js-87990.vercel.app
 
 ## 🎓 Aprendizajes
 
