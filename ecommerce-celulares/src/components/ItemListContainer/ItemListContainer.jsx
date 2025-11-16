@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByCategory } from "../../data/products";
+import { getProducts, getProductsByCategory } from "../../data/Products";
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css";
-// import { collection, getDocs} from "firebase/firestore";
-// import { db } from "../../services/firebase"
 
 const ItemListContainer = ({ greeting }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [Error, setError] = useState(null);
   const { categoryId } = useParams();
 
   useEffect(() => {
     setLoading(true);
+    setError(null);
 
     const fetchProducts = categoryId
       ? getProductsByCategory(categoryId)
@@ -23,7 +23,8 @@ const ItemListContainer = ({ greeting }) => {
         setProducts(data);
       })
       .catch((error) => {
-        console.error("Error al cargar productos:", error);
+        console.error("❌ Error al cargar productos:", error);
+        setError("Error al cargar los productos. Verifica la consola.");
       })
       .finally(() => {
         setLoading(false);

@@ -1,15 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../CartContext/CartContext";
 import "./Cart.css";
 
 const Cart = () => {
   const { cart, removeItem, clear, getTotalPrice } = useCart();
+  const navigate = useNavigate();
 
   const handleCheckout = () => {
-    alert(
-      `Compra realizada!\nTotal: $${getTotalPrice()}\nProductos: ${cart.length}`
-    );
-    clear();
+    navigate("/Checkout");
   };
 
   if (cart.length === 0) {

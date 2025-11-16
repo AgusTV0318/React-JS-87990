@@ -1,23 +1,30 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getProductById } from "../../data/products";
+import { getProductById } from "../../data/Products";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import "./ItemDetailContainer.css";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [Error, setError] = useState(null);
   const { itemId } = useParams();
 
   useEffect(() => {
     setLoading(true);
+    setError(null);
 
     getProductById(itemId)
       .then((data) => {
-        setProduct(data);
+        if (data) {
+          setProduct(data);
+        } else {
+          setError("Producto no encontrado");
+        }
       })
       .catch((error) => {
-        console.error("Error al cargar el producto:", error);
+        console.error("❌ Error al cargar el producto:", error);
+        setError("Error al cargar el producto. Verifica la consola.");
       })
       .finally(() => {
         setLoading(false);

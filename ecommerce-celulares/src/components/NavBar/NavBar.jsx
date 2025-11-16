@@ -7,7 +7,7 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-brand">
-          <h1>📱 CelularShop</h1>
+          <h1>📱 CellTech </h1>
         </Link>
 
         <ul className="navbar-menu">
