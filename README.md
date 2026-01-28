@@ -1,4 +1,4 @@
-# 📱 E-Commerce de Celulares - CelularShop
+# 📱 E-Commerce de Celulares - CellTech
 
 Proyecto final del curso de **React JS** de Coderhouse.
 
